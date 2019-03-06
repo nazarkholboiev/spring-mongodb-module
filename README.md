@@ -61,13 +61,11 @@ public class MorphiaProvider implements IMorphiaProvider {
 
 1. Inherit model from class **AbstractMongoModel**
 2. Add a class annotation **Entity("collection_name")**
-3. Fill model with fields. It is desirable to create fields with the access modifier *private* and generate getters/sets for help *Alt + Insert*
+3. Fill model with fields. It is desirable to create fields with the access modifier *private* and generate getters/sets for help *Alt + Insert*  
 3.1. Fields can be of the following types:  
-3.1.1. Field itself - simple types, not marked with annotation 
-3.1.2. The embedded object is marked with the annotation **Embedded** (thus the internal embedded object will be stored in the database, the level of embedding is not limited)
-3.1.3. A reference to an object from a collection (this one is another) - is marked with the **Reference** annotation (so we can save on expended money,
-        but we will not be able to search for the intrinsic fields of such an object when searching from these collections, but we will not have to worry about updating the model,
-        and therefore do not need to write triggers) 
+3.1.1. Field itself - simple types, not marked with annotation  
+3.1.2. The embedded object is marked with the annotation **Embedded** (thus the internal embedded object will be stored in the database, the level of embedding is not limited)  
+3.1.3. A reference to an object from a collection (this one is another) - is marked with the **Reference** annotation (so we can save on expended money, but we will not be able to search for the intrinsic fields of such an object when searching from these collections, but we will not have to worry about updating the model, and therefore do not need to write triggers) 
 
 
 **Attention**: In the Java environment, the programmer has access to all internal fields of the field with a *Reference* annotation, without additional queries, which is very convenient.  
